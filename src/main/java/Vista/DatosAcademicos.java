@@ -21,24 +21,25 @@ public class DatosAcademicos extends JFrame{
     JTextField jtNomplan;
     JLabel jlFecha, jlNomp, jlTitulo;
     ////////////////////////////////
-    JSpinner jsNumeros, jsTexto, jsFecha;
-    JButton jbGuardar, jbVolver;
+     JSpinner jsNumeros, jsTexto, jsFecha;
+     JButton jbGuardar, jbVolver;
     SpinnerDateModel sdm;
     
     public DatosAcademicos(){
      super("Datos Academicos");
+     
         setSize(400, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
         setLocationRelativeTo(null);
         crearGUI();
+        //setDefaultCloseOperation(DO_NOTHING_ON_CLOSE); 
         setVisible(true);
         
    }
     public void crearGUI(){
         jlTitulo = new JLabel("<html>Datos Academicos<br></center>");
         jlTitulo.setBounds(50, 10, 300, 60); // este metodo sirve hubbicar en la pantalla 
-        //jlTitulo.setOpaque(true);// esto sirve para poner el fondo blanco del texto 
         jlTitulo.setForeground(Color.BLACK);// estesirve para cambiar el color de la letra
         jlTitulo.setFont(new Font("Arial", Font.BOLD|Font.BOLD,20)); // sirve para cambiar el tipo de letra
         jlTitulo.setHorizontalAlignment(JLabel.CENTER);  // Sirve para centrar el texto 
@@ -54,8 +55,7 @@ public class DatosAcademicos extends JFrame{
         jcCombo.addItem("3845"); // Adminstracion de empresas
         jcCombo.addItem("3857"); // Comercio exterior
         jcCombo.addItem("3553"); // Comunicasion solical
-        jcCombo.setBounds(30, 60, 330, 30);
-        //setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);  
+        jcCombo.setBounds(30, 60, 330, 30); 
         setResizable(false);
         add(jcCombo);
         
@@ -94,7 +94,6 @@ public class DatosAcademicos extends JFrame{
         jJornada.addItem("Diurna"); 
         jJornada.addItem("Nocturna"); 
         jJornada.setBounds(30, 180, 330, 30);
-        //setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);  
         setResizable(false);
         add(jJornada);
         
@@ -113,30 +112,8 @@ public class DatosAcademicos extends JFrame{
     }
     
     public static void main(String[] args) {
-        DatosAcademicos obj = 
-                new DatosAcademicos();
-        
+        DatosAcademicos obj = new DatosAcademicos();
     }
     
     
 }
-/*
-JPanel - Datos Personales
-*-tipo de ID: combo 
--numero de ID: campo
--apellido
--nombre
-*-genero: combo o radios
--Fecha de nac: jspinner o Jcalendar
--Ciudad de residencia: campo
--Dir de residencia: campo
--Correo: campo
-*-Obser: area de texto
-
- JPanel - Datos Academicos
--Codigo del plan: combo
--Nombre del plan: campo calculado
--Jornada: combo o radios
--Fecha de ingreso: jspinner o Jcalendar
-
-*/
